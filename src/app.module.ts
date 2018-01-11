@@ -12,7 +12,8 @@ import { GraphQLModule, GraphQLFactory } from '@nestjs/graphql';
 @Module({
   imports: [GraphQLModule],
   controllers: [AppController],
-  components: [SocketComponent],
+  components: [],
+  exports: []
 })
 export class ApplicationModule implements NestModule {
 
