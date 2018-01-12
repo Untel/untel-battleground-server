@@ -11,5 +11,6 @@ async function bootstrap() {
 	app.use(express.static('public'));
 	await app.init();
 	server.listen(8080);
+	console.log('Server started on port 8080');
 }
 bootstrap();
