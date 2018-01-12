@@ -13,11 +13,12 @@ export class Character {
     public isMe: boolean;
     public lastAction: any;
     public lastDirection: any;
+    public dammage: number;
 
     constructor(parameters: CharacterCtor) {
         this.id = get(parameters, 'id');
         this.name = get(parameters, 'name') || this.id;
-        this.spriteName = get(parameters, 'spriteName') || 'naked';
+        this.spriteName = get(parameters, 'spriteName') || 'armored';
         this.hp = get(parameters, 'hp') || 100;
         this.hpMax = get(parameters, 'hpMax') || 100;
         this.x = get(parameters, 'x') || 0;
@@ -25,12 +26,14 @@ export class Character {
         this.velocity = get(parameters, 'velocity') || 1;
         this.isMe = get(parameters, 'isMe') || false;
         this.lastAction = get(parameters, 'lastAction') || 'walk';
-        this.lastDirection = get(parameters, 'lastDirection') || 0;
+        this.lastDirection = get(parameters, 'lastDirection') || 'up';
+        this.dammage = get(parameters, 'dammage') || 5;
+        
     }
 }
 
 export interface CharacterCtor {
-    id: string;
+    id?: string;
     name?: string;
     spriteName?: string;
     hp?: number;
@@ -41,4 +44,5 @@ export interface CharacterCtor {
     isMe?: boolean;
     lastAction?: any;
     lastDirection?: any;
+    dammage?: number;    
 };
