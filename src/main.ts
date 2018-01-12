@@ -10,6 +10,6 @@ async function bootstrap() {
 	app.useWebSocketAdapter(new ExtendedSocketIoAdapter(server));
 	app.use(express.static('public'));
 	await app.init();
-	server.listen(process.env.PORT);
+	server.listen(8080);
 }
 bootstrap();
